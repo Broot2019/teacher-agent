@@ -1,0 +1,1 @@
+import{P as e}from"./index-Bo_eGrQ7.js";const n=t=>e.post("/question-bank/generate",t,{headers:{"Content-Type":"multipart/form-data"}}),o=(t=50)=>e.get("/question-bank/history",{params:{limit:t}});export{n as g,o as q};

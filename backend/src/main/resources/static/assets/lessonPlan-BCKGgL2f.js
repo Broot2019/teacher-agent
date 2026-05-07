@@ -1,0 +1,1 @@
+import{P as t}from"./index-Bo_eGrQ7.js";const a=s=>t.post("/lesson-plan/generate",s,{headers:{"Content-Type":"multipart/form-data"}}),n=(s=50)=>t.get("/lesson-plan/history",{params:{limit:s}});export{a as g,n as l};

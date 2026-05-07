@@ -1,0 +1,57 @@
+server:
+  port: 8089
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1
+    max-http-form-post-size: 524288000
+    connection-timeout: 600000
+
+spring:
+  application:
+    name: teacher-agent
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/teacher_agent?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    username: ${TEACHER_AGENT_DB_USERNAME:root}
+    password: ${TEACHER_AGENT_DB_PASSWORD:123456}
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 500MB
+      resolve-lazily: true
+      file-size-threshold: 2KB
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+teacher-agent:
+  data-dir: ./data
+  upload-dir: ./data/uploads
+  output-dir: ./data/outputs
+  template-dir: ./data/templates
+
+jwt:
+  secret: ${JWT_SECRET:teacher-agent-jwt-secret-please-change-in-production-2026}
+  # 生产环境请通过 JWT_SECRET 环境变量覆盖为随机高强度密钥，至少 32 字节
+  expire-hours: 168    # 7 天
+
+logging:
+  level:
+    com.teacheragent: INFO
+    org.springframework.web: INFO

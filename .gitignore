@@ -1,0 +1,33 @@
+# Java / Maven
+backend/target/
+*.class
+*.jar
+*.war
+
+# Spring Boot logs
+*.log
+
+# Runtime data (cache, uploads, generated outputs)
+backend/data/
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Env / secrets
+.env
+*.env.local
+
+# Claude project memory (local only)
+.claude/
