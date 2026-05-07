@@ -31,3 +31,9 @@ Thumbs.db
 
 # Claude project memory (local only)
 .claude/
+
+# Local-only files (kept locally, not tracked)
+competition/
+docs/
+new/
+《Java程序设计基础》教学计划.pdf
